@@ -38,14 +38,27 @@ class PlayerList extends React.Component {
   renderTableData() {
     return this.state.list.map((player, index) => {
        const { nombre, nivel, goles, sueldo, bono, sueldo_completo, equipo} = player //destructuring
+
+       var goles_minimos = null
+       nivel === 'A'? goles_minimos = 5
+       :nivel === 'B'? goles_minimos = 10
+       :nivel === 'C'? goles_minimos = 15 : goles_minimos = 20
+
+       if (sueldo_completo === null){
+        if(goles_minimos < goles){
+            goles_minimos = goles
+        }
+        var extra = (goles * bono) / goles_minimos
+        var total = extra + sueldo
+       }
        return (
           <tr key={nombre}>
              <td>{nombre}</td>
-             <td>{nivel}</td>
+             <td>{goles_minimos}</td>
              <td>{goles}</td>
              <td>{sueldo}</td>
              <td>{bono}</td>
-             <td>{sueldo_completo}</td>
+             <td>{total.toFixed(0)}</td>
              <td>{equipo}</td>
           </tr>
        )
@@ -60,7 +73,7 @@ class PlayerList extends React.Component {
    return(
       <tr key={"headerTableRow"}>
         <th>{headTable.nombre}</th>
-        <th>{headTable.nivel}</th>
+        <th>goles_minimos</th>
         <th>{headTable.goles}</th>
         <th>{headTable.sueldo}</th>
         <th>{headTable.bono}</th>

@@ -1,5 +1,5 @@
-[  
-    {  
+[
+    {
        "nombre":"Juan Perez",
        "nivel":"C",
        "goles":10,
@@ -8,7 +8,7 @@
        "sueldo_completo":null,
        "equipo":"rojo"
     },
-    {  
+    {
        "nombre":"EL Cuauh",
        "nivel":"Cuauh",
        "goles":30,
@@ -17,7 +17,7 @@
        "sueldo_completo":null,
        "equipo":"azul"
     },
-    {  
+    {
        "nombre":"Cosme Fulanito",
        "nivel":"A",
        "goles":7,
@@ -25,9 +25,9 @@
        "bono":10000,
        "sueldo_completo":null,
        "equipo":"azul"
- 
+
     },
-    {  
+    {
        "nombre":"El Rulo",
        "nivel":"B",
        "goles":9,
@@ -35,6 +35,6 @@
        "bono":15000,
        "sueldo_completo":null,
        "equipo":"rojo"
- 
+
     }
  ]
