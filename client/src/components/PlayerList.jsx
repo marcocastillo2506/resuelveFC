@@ -68,12 +68,12 @@ class PlayerList extends React.Component {
  renderTableHeader() {
    let headTable = {}
    for(let key in this.state.list[0]){
-     headTable[key] = key;
+     headTable[key] = key.toUpperCase();
    }
    return(
       <tr key={"headerTableRow"}>
         <th>{headTable.nombre}</th>
-        <th>goles_minimos</th>
+        <th>GOLES_MINIMOS</th>
         <th>{headTable.goles}</th>
         <th>{headTable.sueldo}</th>
         <th>{headTable.bono}</th>
