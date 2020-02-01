@@ -22,7 +22,6 @@ class PlayerList extends React.Component {
           list: results,
           isLoaded: true,
         });
-        //console.log(this.state.list);
       },
       error: (xhr, err) => {
         console.log('err', err);
@@ -34,6 +33,7 @@ class PlayerList extends React.Component {
     this.getPlayerList();
     this.renderTableHeader();
   }
+
 
   renderTableData() {
     return this.state.list.map((player, index) => {
@@ -53,27 +53,31 @@ class PlayerList extends React.Component {
  }
 
  renderTableHeader() {
-   if(this.state.isLoaded === false){
-     console.log("is empty");
-   }else{
-     console.log("is full");
+   let headTable = {}
+   for(let key in this.state.list[0]){
+     headTable[key] = key;
    }
-     // let header = Object.keys(this.state.list[0])
-     // return header.map((key, index) => {
-     //    return <th key={index}>{key.toUpperCase()}</th>
-     // })
-     //console.log(this.state.list,"trigerr");
+   return(
+      <tr key={"headerTableRow"}>
+        <th>{headTable.nombre}</th>
+        <th>{headTable.nivel}</th>
+        <th>{headTable.goles}</th>
+        <th>{headTable.sueldo}</th>
+        <th>{headTable.bono}</th>
+        <th>{headTable.sueldo_completo}</th>
+        <th>{headTable.equipo}</th>
+      </tr>
+   )
   }
 
 
   render() {
-    console.log(this.state.list);
 return (
   <div>
         <h1 id='title'>Resuelve FC Leauge</h1>
         <table id='players'>
            <tbody>
-
+              {this.renderTableHeader()}
               {this.renderTableData()}
            </tbody>
         </table>
