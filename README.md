@@ -2,9 +2,10 @@
 
 ## Instrucciones a seguir
 1. Clonea repositorio: `git clone https://github.com/marcocastillo2506/resuelveFC.git`
-2. NPM: `npm install`
-3. Ejecuta el servidor: `npm run server`
-4. Ejecuta client-side: primero `cd client/` despues corre `npm run start`
+2. NPM: Entra al repositorio con `cd resuelveFC/` y correr `npm i`.
+3. Ejecuta el servidor: correr `npm run server` en terminal.
+4. Client-Side: Abrir nueva pestaña en terminal y entrar a carpeta de cliente con `cd resuelveFC/client/` y correr `npm i`.
+4. Ejecuta client-side: correr `npm run start` en terminal.
 
 ## Problema
 
